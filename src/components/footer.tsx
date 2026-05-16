@@ -23,7 +23,7 @@ const footerSections = [
   {
     title: "COMPANY",
     links: [
-      { label: "Our Story", href: "#" },
+      { label: "Our Story", href: "/about" },
       { label: "Our Materials", href: "#" },
       { label: "Sustainability", href: "#" },
       { label: "Careers", href: "#" },
@@ -70,7 +70,7 @@ export function Footer() {
             <p className="text-sm text-white/60 mb-4 leading-relaxed">
               Get the latest on new products, exclusive deals, and more.
             </p>
-            <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+            <form action="/account/login" className="flex flex-col gap-3">
               <input
                 type="email"
                 placeholder="Email Address"

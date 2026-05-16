@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const promos = [
   {
@@ -65,7 +66,12 @@ export function PromoTiles() {
                   <Link
                     key={i}
                     href={link.href}
-                    className="inline-flex items-center justify-center px-5 py-2 text-[11px] font-medium uppercase tracking-[0.6px] text-white border border-white rounded-full hover:bg-white hover:text-charcoal transition-all duration-200"
+                    className={cn(
+                      "inline-flex items-center justify-center px-5 py-2 text-[11px] font-medium uppercase tracking-[0.6px] text-white border border-white rounded-full transition-all duration-200",
+                      link.label === "SHOP MEN"
+                        ? "hover:bg-sky-200 hover:text-charcoal"
+                        : "hover:bg-white hover:text-charcoal"
+                    )}
                   >
                     {link.label}
                   </Link>

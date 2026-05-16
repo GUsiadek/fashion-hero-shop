@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { heroSlides } from "@/data/products";
 import { PauseIcon, PlayIcon } from "@/components/icons";
+import { cn } from "@/lib/utils";
 
 const slideGradients = [
   "linear-gradient(135deg, #c4b59a 0%, #8a7d6b 40%, #5c6b4f 100%)",
@@ -65,7 +66,12 @@ export function HeroCarousel() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="inline-flex items-center justify-center px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.6px] text-white border border-white rounded-full hover:bg-white hover:text-charcoal transition-all duration-200"
+                className={cn(
+                  "inline-flex items-center justify-center px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.6px] text-white border border-white rounded-full transition-all duration-200",
+                  link.label === "SHOP MEN"
+                    ? "hover:bg-sky-200 hover:text-charcoal"
+                    : "hover:bg-white hover:text-charcoal"
+                )}
               >
                 {link.label}
               </Link>
